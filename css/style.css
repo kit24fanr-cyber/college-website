@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
 /* ===== GLOBAL STYLES ===== */
 :root {
+    --font-body: 'Inter', 'Segoe UI', sans-serif;
+    --font-heading: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
     --primary-color: #176b52;
     --primary-dark: #0b3d2e;
     --primary-light: #d9eee5;
@@ -21,7 +25,7 @@
 }
 
 body {
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-body);
     color: var(--text-dark);
     line-height: 1.75;
     background-color: #fffdf8;
@@ -30,9 +34,11 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
     font-weight: 800;
     color: var(--primary-dark);
     margin-bottom: 1rem;
+    letter-spacing: -0.025em;
 }
 
 .bg-primary {
@@ -73,6 +79,7 @@ a:hover {
 }
 
 .btn {
+    font-family: var(--font-heading);
     border-radius: var(--rounded-sm);
     padding: 0.85rem 2.2rem;
     font-weight: 700;
@@ -132,6 +139,7 @@ a:hover {
 }
 
 .navbar-brand {
+    font-family: var(--font-heading);
     display: flex;
     align-items: center;
     font-weight: 800;
@@ -148,6 +156,7 @@ a:hover {
 }
 
 .navbar-dark .navbar-nav .nav-link {
+    font-family: var(--font-heading);
     color: var(--text-light);
     font-weight: 600;
     padding: 0.6rem 1.2rem;
