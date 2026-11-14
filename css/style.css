@@ -217,18 +217,83 @@ a:hover {
 /* ===== PAGE HEADER ===== */
 .page-header {
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/page-header-bg.jpg') no-repeat center center;
-    background-size: cover;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 12% 25%, rgba(243, 201, 107, 0.18) 0 3px, transparent 4px),
+        radial-gradient(circle at 88% 70%, rgba(255, 255, 255, 0.12) 0 4px, transparent 5px),
+        linear-gradient(120deg, #082f24 0%, #0b4b38 55%, #176b52 100%);
+    background-size: 42px 42px, 58px 58px, auto;
     color: white;
-    padding: 120px 0;
+    padding: 88px 0 82px;
     text-align: center;
+}
+
+.page-header::before,
+.page-header::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    border: 48px solid rgba(255, 255, 255, 0.055);
+}
+
+.page-header::before {
+    width: 300px;
+    height: 300px;
+    top: -190px;
+    left: -60px;
+}
+
+.page-header::after {
+    width: 240px;
+    height: 240px;
+    right: -45px;
+    bottom: -160px;
+    border-color: rgba(217, 154, 43, 0.16);
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 1;
 }
 
 .page-header h1 {
     font-size: 3rem;
-    margin-bottom: 1rem;
+    color: white;
+    margin-bottom: 1.1rem;
     font-weight: 800;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    text-shadow: none;
+}
+
+.page-header h1::after {
+    content: '';
+    display: block;
+    width: 54px;
+    height: 4px;
+    margin: 16px auto 0;
+    background: var(--secondary-color);
+    border-radius: 999px;
+}
+
+.page-header .breadcrumb {
+    justify-content: center;
+    margin: 0;
+}
+
+.page-header .breadcrumb-item,
+.page-header .breadcrumb-item.active,
+.page-header .breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.page-header .breadcrumb-item a {
+    color: var(--secondary-light);
+    font-weight: 600;
+}
+
+.page-header .breadcrumb-item a:hover {
+    color: white;
 }
 
 /* ===== PROGRAM CARDS ===== */
